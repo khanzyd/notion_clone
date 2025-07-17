@@ -6,18 +6,18 @@ import { useUser } from "@clerk/nextjs"
 function Header() {
   let { isLoaded,user } = useUser();
 
-  if(!isLoaded){
-    return(
-      <div className="bg-zinc-800 text-white p-2">
-        <h1>NOTION !!</h1>
-      </div>
-    )
-  }
+  // if(!isLoaded){
+  //   return(
+  //     <div className="bg-zinc-800 text-white p-2">
+  //       <h1>NOTION !!</h1>
+  //     </div>
+  //   )
+  // }
 
   return (
-    <div className="">
+    <div className="flex items-center justify-between p-4">
       {user && 
-        <h2 className="">{user?.username}{` 's Space`}</h2>
+        <h2 className="2xl:">{user?.username}{` 's Space`}</h2>
       }
 
       {/* {Breadcrums} */}

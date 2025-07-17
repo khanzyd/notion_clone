@@ -2,6 +2,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
+import Sidebar from "@/components/Sidebar";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,11 +17,14 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body
-          className={`antialiased`}
-        >
+        <body className="antialiased"> 
           <Header/>
-          {children}
+          <div className="flex min-h-screen">
+            <Sidebar/>
+            <div className="bg-gray-100 flex-1 overflow-y-auto scrollbar-hide p-4">
+              {children}
+            </div>
+          </div>
         </body>
       </html>
     </ClerkProvider>
