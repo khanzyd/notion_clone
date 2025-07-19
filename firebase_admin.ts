@@ -3,7 +3,7 @@ import { getFirestore } from "firebase-admin/firestore";
 
 let app:App;
 
-let serviceKey = require("@/service_key.json");
+let serviceKey = require("./service_key.json");
 
 app = getApps().length === 0? initializeApp({
     credential: cert(serviceKey)

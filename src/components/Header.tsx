@@ -17,7 +17,7 @@ function Header() {
   return (
     <div className="flex items-center justify-between p-4">
       {user && 
-        <h2 className="2xl:">{user?.username}{` 's Space`}</h2>
+        <h2 className="2xl:">{user?.username || user?.firstName}{` 's Space`}</h2>
       }
 
       {/* {Breadcrums} */}
