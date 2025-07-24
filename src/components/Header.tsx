@@ -1,18 +1,11 @@
 "use client"
 
-import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
+import { SignedIn, SignedOut, SignInButton, SignOutButton, UserButton } from "@clerk/clerk-react";
 import { useUser } from "@clerk/nextjs"
+import Breadcrumbs from "./Breadcrumbs";
 
 function Header() {
   let { isLoaded,user } = useUser();
-
-  // if(!isLoaded){
-  //   return(
-  //     <div className="bg-zinc-800 text-white p-2">
-  //       <h1>NOTION !!</h1>
-  //     </div>
-  //   )
-  // }
 
   return (
     <div className="flex items-center justify-between p-4">
@@ -20,13 +13,14 @@ function Header() {
         <h2 className="2xl:">{user?.username || user?.firstName}{` 's Space`}</h2>
       }
 
-      {/* {Breadcrums} */}
+      <Breadcrumbs/>
 
       <div className="">
         <SignedOut>
           <SignInButton/>
         </SignedOut>
         <SignedIn>
+          <SignOutButton/>
           <UserButton/>
         </SignedIn>
       </div>
